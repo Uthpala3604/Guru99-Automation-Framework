@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="FE_Automation">
+    <test name="Register User TC">
+        <classes>
+<!--            <class name="testCases.TC001_RegisterUserTest"/>-->
+            <class name="testCases.TC002_RegisterLoginUserTest"/>
+        </classes>
+    </test>
+</suite>
