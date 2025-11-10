@@ -6,12 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.*;
 import utility.PropertyFileReader;
+import utility.extentReport.ExtentReportListenerManager;
 
 import java.time.Duration;
 
+//@Listeners(ExtentReportListenerManager.class)
 public class TC002_RegisterLoginUserTest extends BaseClass {
 
     PropertyFileReader propertyFileReader = new PropertyFileReader();

@@ -5,7 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import utility.extentReport.ExtentReportUtility;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,9 +19,14 @@ import java.util.Properties;
 
 public class BaseClass {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public Properties prop;
+
+    @BeforeSuite
+    public void beforeSuite(){
+        ExtentReportUtility.startReporter();
+    }
 
     @BeforeMethod
     public void openPage() throws IOException {
@@ -68,5 +76,10 @@ public class BaseClass {
     @AfterMethod
     public void closeBrowser(){
         driver.quit();
+    }
+
+    @AfterSuite
+    public void afterSuite(){
+        ExtentReportUtility.endReport();
     }
 }
