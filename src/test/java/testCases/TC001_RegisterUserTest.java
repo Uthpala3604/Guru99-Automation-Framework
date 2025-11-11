@@ -13,6 +13,7 @@ import pages.HomePage;
 import pages.RegisterPage;
 import pages.RegisterSuccessPage;
 import utility.PropertyFileReader;
+import utility.RetryAnalyzer;
 import utility.extentReport.ExtentReportListenerManager;
 
 import java.time.Duration;
@@ -29,7 +30,7 @@ public class TC001_RegisterUserTest extends BaseClass {
         String actualText = newToursCommonFunctions.registerUser("Uthpala", "Pathirana", 071234567,
                 "test2gmail.com", "No 112, Albania.", "Albania", "Albania",
                 4509, "Uthpala123", "test123", "test123");
-        Assert.assertTrue(actualText.contains("Dear"), "Registration Attempt Failed");
+        Assert.assertTrue(actualText.contains("Dear123"), "Registration Attempt Failed");
 
     }
 
