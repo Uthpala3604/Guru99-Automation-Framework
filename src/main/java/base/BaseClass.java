@@ -23,12 +23,12 @@ public class BaseClass {
 
     public Properties prop;
 
-    @BeforeSuite
+    @BeforeSuite (groups = {"smoke", "regression"})
     public void beforeSuite(){
         ExtentReportUtility.startReporter();
     }
 
-    @BeforeMethod
+    @BeforeMethod (groups = {"smoke", "regression"})
     public void openPage() throws IOException {
 
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+
@@ -73,12 +73,12 @@ public class BaseClass {
         //driver.get(prop.getProperty("App_url"));
     }
 
-    @AfterMethod
+    @AfterMethod (groups = {"smoke", "regression"})
     public void closeBrowser(){
         driver.quit();
     }
 
-    @AfterSuite
+    @AfterSuite (groups = {"smoke", "regression"})
     public void afterSuite(){
         ExtentReportUtility.endReport();
     }

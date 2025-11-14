@@ -16,7 +16,6 @@ public class RegisterPage {
         PageFactory.initElements(driver,this);
     }
 
-
     @FindBy(name = "firstName")
     WebElement firstName_ele;
 
@@ -110,6 +109,4 @@ public class RegisterPage {
     public void submit(){
         submitBtn_ele.click();
     }
-
-
 }
